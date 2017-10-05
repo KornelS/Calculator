@@ -18,17 +18,84 @@ public class Calculator {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("1st number: ");
-        Scanner number1 = new Scanner(System.in);
-        int a = number1.nextInt();
+        String operation, again;
+        double a, b, result = 0;
+        boolean yesNo = true;
         
-        System.out.println("1st number: ");
-        Scanner number2 = new Scanner(System.in);
-        int b = number2.nextInt();
+        Scanner input = new Scanner (System.in); 
         
-        int result = a+b;
+        while (yesNo)
+        {
+            System.out.println("What would you like to do? +, -, *, /");
         
-        System.out.println("The summ is: " + result);
-    }
-    
+            operation = input.nextLine();
+            
+            if  (!"+".equals(operation) && !"-".equals(operation) && !"*".equals(operation) && !"/".equals(operation))
+                {
+                    System.out.println("Wrong key!");
+                    continue;
+                }
+            else
+                {
+                    
+                    System.out.println("Enter the first number: ");
+                    while (!input.hasNextDouble())
+                    {
+                        System.out.println("This is not a number! Please enter a number.");
+                        input.next();
+                    }
+                    a = input.nextDouble();
+                    
+                    System.out.println("Enter the second number: ");
+                    while (!input.hasNextDouble())
+                    {
+                        System.out.println("This is not a number! Please enter a number.");
+                        input.next();
+                    }
+                    b = input.nextDouble();
+
+                    if ("+".equals(operation)) 
+                    {
+                        result = a+b;
+                    }
+
+                    else if ("-".equals(operation)) 
+                    {
+                       result = a-b;
+                    }
+
+                    else if ("*".equals(operation)) 
+                    {
+                        result = a*b;
+                    }
+
+                    else if ("/".equals(operation)) 
+                    {
+                        result = a/b;
+                    }
+                    System.out.println("The result is: " + result);
+                    System.out.println("");
+                    System.out.println("Would you like to do another calculation? y/n");
+                    again = input.nextLine();
+                    again = input.nextLine();
+                    if (again.equals("y"))
+                        {
+                        continue;
+                        }
+                    else if (again.equals("n")) 
+                        {
+                        break;
+                        }
+                    else 
+                        {
+                        
+                    }
+                }
+            
+        }
+   }
 }
+
+    
+    
+
