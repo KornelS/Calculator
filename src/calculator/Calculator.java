@@ -76,7 +76,7 @@ public class Calculator {
                     System.out.println("The result is: " + result);
                     System.out.println("");
                     System.out.println("Would you like to do another calculation? y/n");
-                    //Need to double this line or wont let you type in a letter.
+                    //Need to double this line or it won't let you type in the letter.
                     again = input.nextLine();
                     again = input.nextLine();
                     if (again.equals("y"))
