@@ -87,10 +87,6 @@ public class Calculator {
                         {
                         break;
                         }
-                    else 
-                        {
-                        
-                    }
                 }
             
         }
